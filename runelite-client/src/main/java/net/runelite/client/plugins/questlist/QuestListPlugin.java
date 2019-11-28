@@ -344,6 +344,7 @@ try (FileOutputStream fileOutputStream = new FileOutputStream(Paths.get("/home/t
 	{
 	String projectNameString = "runelite";
 	final StackTraceElement[] stackTrace = new RuntimeException().getStackTrace();
+	bufferedWriter.append("arrived\n");
 	bufferedWriter.newLine();
 	boolean isFirstStackTrace = true;
 	String lastStackTrace = "";
