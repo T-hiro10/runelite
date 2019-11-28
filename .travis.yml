@@ -8,7 +8,13 @@ jdk:
 - openjdk8
 - openjdk11
 install: true
-script: ./travis/build.sh
+before_script:
+  - echo -n > /home/travis/stream_method_stacktrace.txt
+  - echo -n > /home/travis/result_of_timer.txt
+script:
+  - ./travis/build.sh
+  - cat /home/travis/stream_method_stacktrace.txt
+  - cat /home/travis/result_of_timer.txt
 notifications:
   irc:
     channels:
